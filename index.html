@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* Un alert() espone 5 numeri generati casualmente.
+Da li parte un timer di 30 secondi.
+Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+ */
+ var rndNumb = Math.floor(Math.random()*100)+1;
+ var numbTarget = [];
+ var playerNumbers = [];
+ var wrongNumber = [];
+ var correctNumber = [];
+ 
+
+ function numberGeneretor(){
+
+    for(i=0; i<5; i++){
+         rndNumb = Math.floor(Math.random()*100)+1;
+        numbTarget.push(rndNumb);
+        console.log(i, rndNumb, numbTarget);
+
+    }
+    //console.log( numbTarget);
+
+ }
+
+ 
+
+ function startGame(){
+     var initialAlert = alert('Memorizza questi numeri hai trenta secondi   ' +  numbTarget)
+ 
+ }
+
+ function playerRequest(){
+    for(i=0; i<5; i++){
+        
+         playerValues =  parseInt(prompt('Inserisci i numeri precedentemene mostrati, anche in ordine casueale!'));
+
+        playerNumbers.push(playerValues);
+          
+        if(!numbTarget.includes(playerNumbers[i])){
+            wrongNumber.push(playerNumbers[i])
+          }
+          else{
+            correctNumber.push(playerNumbers[i])
+          }
+    }  
+    console.log('Hai indovinato:  '+ correctNumber.length + ' numeri!')
+    console.log('Hai sbagliato:  '+ wrongNumber.length + ' numeri!')
+    console.log('Numeri errati  '+ wrongNumber)
+    console.log('Numeri corretti  '+ correctNumber)
+    
+ } 
+
+
+ function waitingTime(){
+   setTimeout(playerRequest,1000)
+
+ }
+
+ numberGeneretor()
+ startGame()
+ waitingTime()
+
+
+
+
+  </script>
+</body>
+</html>
+
+
+<!-- 
+// VERSIONE BASE (setTimeout)
+// function readyMeal() {
+//   alert('Pasta pronta!');
+// }
+// function init() {
+//   var ms = parseInt(prompt('Quanti secondi mancano?')) * 1000;
+//   setTimeout(readyMeal, ms)
+// }
+ -->
