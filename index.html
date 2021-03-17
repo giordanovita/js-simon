@@ -25,11 +25,9 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
     for(i=0; i<5; i++){
          rndNumb = Math.floor(Math.random()*100)+1;
         numbTarget.push(rndNumb);
-        console.log(i, rndNumb, numbTarget);
-
+       // console.log(i, rndNumb, numbTarget);
     }
     //console.log( numbTarget);
-
  }
 
  
@@ -62,7 +60,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 
  function waitingTime(){
-   setTimeout(playerRequest,1000)
+   setTimeout(playerRequest,30000)
 
  }
 
@@ -78,13 +76,3 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 </html>
 
 
-<!-- 
-// VERSIONE BASE (setTimeout)
-// function readyMeal() {
-//   alert('Pasta pronta!');
-// }
-// function init() {
-//   var ms = parseInt(prompt('Quanti secondi mancano?')) * 1000;
-//   setTimeout(readyMeal, ms)
-// }
- -->
