@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(purple, black);
+            color: white;
+        }
+
+
+
+    </style>
 </head>
 <body>
+
+        <h1>ALLENA LA TUA MEMORIA</h1>
+        <h2 id="correctlenght"></h2>
+        <h2 id="wronglenght"></h2>
+        <h2 id="correct"></h2>
+        <h2 id="wrong"></h2>
+
+
+
+
+
+
+
     <script>
 /* Un alert() espone 5 numeri generati casualmente.
 Da li parte un timer di 30 secondi.
@@ -18,7 +44,15 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
  var playerNumbers = [];
  var wrongNumber = [];
  var correctNumber = [];
- 
+ var correctLenght = document.getElementById('correctlenght');
+ var wrongLenght = document.getElementById('wronglenght');
+ var correct = document.getElementById('correct');
+ var wrong = document.getElementById('wrong');
+
+
+
+
+
 
  function numberGeneretor(){
 
@@ -29,8 +63,6 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
     }
     //console.log( numbTarget);
  }
-
- 
 
  function startGame(){
      var initialAlert = alert('Memorizza questi numeri hai trenta secondi   ' +  numbTarget)
@@ -51,25 +83,27 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
             correctNumber.push(playerNumbers[i])
           }
     }  
-    console.log('Hai indovinato:  '+ correctNumber.length + ' numeri!')
+/*     console.log('Hai indovinato:  '+ correctNumber.length + ' numeri!')
     console.log('Hai sbagliato:  '+ wrongNumber.length + ' numeri!')
     console.log('Numeri errati  '+ wrongNumber)
     console.log('Numeri corretti  '+ correctNumber)
-    
+ */    
+
+
+ correctLenght.innerHTML = 'Hai indovinato:  '+ correctNumber.length + ' numeri!';
+ wrongLenght.innerHTML = 'Hai sbagliato:  '+ wrongNumber.length + ' numeri!';
+ correct.innerHTML = 'Numeri errati  '+ wrongNumber;
+ wrong.innerHTML = 'Numeri corretti  '+ correctNumber;
  } 
 
-
  function waitingTime(){
-   setTimeout(playerRequest,30000)
+   setTimeout(playerRequest,1000)
 
  }
 
  numberGeneretor()
  startGame()
  waitingTime()
-
-
-
 
   </script>
 </body>
